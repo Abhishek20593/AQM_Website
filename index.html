@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="intro-text">
-        <h3>About the page</h3>
-        <p>Air Quality Monitoring using Bluetooth HC-05. By using this Web Application the Real-time Monitoring of Ambient Temperature, Carbon Monoxide (CO), Smoke (air quality), and Particulate Matters PM2.5 and PM10. </p>
-    </div>
-    <h1>Realtime Monitoring</h1>
-    <!-- <div class="graphs">
+     <div class="intro-text">
+     <h3>About the page</h3>
+     <p>Air Quality Monitoring is performed by using MSP430 Low-power Microcontroller and Bluetooth HC-05. By using this Web application, we are monitoring Ambient Temperature, Carbon monoxide, Smoke (Air Quality), PM2.5, and PM10. This is developing and maintaining by the 'Bioelectronics Innovation Laboratory', Department of Electronics and Electrical Communication Engineering (E&ECE), Indian Institute of Technology Kharagpur, Kharagpur-721302, West Bengal, India. </p>
+     </div>
+     <h1>Realtime Monitoring</h1>
+     <div class="graphs">
         <canvas id="temp" height="600" width="1200"></canvas>
         <canvas id="co" height="600" width="1200"></canvas>
         <canvas id="aq" height="600" width="1200"></canvas>
         <canvas id="pm2" height="600" width="1200"></canvas>
         <canvas id="pm10" height="600" width="1200"></canvas>
-    </div> -->
-    <div class="time-date-selector">
-        <input type="text" placeholder="DD/MM/YYYY" id="date">
-    </div>
-    <div class="data-container">
+     </div>
+     <div class="time-date-selector">
+     <input type="text" placeholder="DD/MM/YYYY" id="date">
+     </div>
+     <div class="data-container">
         <table id="data" style="width: 100%;">
             <tr>
                 <th>Timestamp</th>
@@ -33,8 +33,8 @@
                 <th>PM10 (ug/m^3)</th>
             </tr>
         </table>
-    </div>
-    <button onclick="signOut()">Log out</button>
+     </div>
+     <button onclick="signOut()">Log out</button>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 

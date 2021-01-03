@@ -107,180 +107,180 @@ IF user enters date ---->
     [ ] - then add using only "innerHTML=" not "innerHTML+=" 
 */
 
-// function draw_graph(){
-//     new Chart(document.getElementById('temp').getContext('2d'), {
-//         // The type of chart we want to create
-//         type: 'line',
-//         // The data for our dataset
-//         data: {
-//             labels: timestamp_arr,
-//             datasets: [{
-//                 label: 'Temperature (0C)',
-//                 backgroundColor: 'rgb(255, 99, 132)',
-//                 borderColor: 'rgb(255, 99, 132)',
-//                 data: temp,
-//                 fill: false
-//             }]
-//         },
-//         // .slice(0,temp.length/10
+ function draw_graph(){
+    new Chart(document.getElementById('temp').getContext('2d'), {
+         // The type of chart we want to create
+        type: 'line',
+        // The data for our dataset
+        data: {
+            labels: timestamp_arr,
+            datasets: [{
+                label: 'Temperature (0C)',
+                backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: temp,
+                 fill: false
+            }]
+         },
+         // .slice(0,temp.length/10
     
-//         // Configuration options go here
-//         options: {
-//             responsive: false,
-//             events: ['click'],
-// 			title: {
-// 					display: true,
-// 					text: 'Temperature Chart'
-// 			},
-// 			tooltips: {
-// 					mode: 'nearest',
-// 					intersect: true,
-// 			},
-// 			hover: {
-// 					mode: 'nearest',
-// 					intersect: true
-// 			},
-//         }
-//     });
-
-//     new Chart(document.getElementById('co').getContext('2d'), {
-//         // The type of chart we want to create
-//         type: 'line',
-//         // The data for our dataset
-//         data: {
-//             labels: timestamp_arr,
-//             datasets: [{
-//                 label: 'CO (PPB)',
-//                 backgroundColor: 'rgb(255, 99, 132)',
-//                 borderColor: 'rgb(255, 99, 132)',
-//                 data: co,
-//                 fill: false
-//             }]
-//         },
-//         // .slice(0,temp.length/10
+        // Configuration options go here
+        options: {
+            responsive: false,
+            events: ['click'],
+			title: {
+					display: true,
+					text: 'Temperature Chart'
+			},
+			tooltips: {
+					mode: 'nearest',
+ 					intersect: true,
+ 			},
+		    hover: {
+ 					mode: 'nearest',
+                    intersect: true
+            },
+         }
+             });
+             
+             
+    new Chart(document.getElementById('co').getContext('2d'), {
+         // The type of chart we want to create
+         type: 'line',
+         // The data for our dataset
+         data: {
+             labels: timestamp_arr,
+             datasets: [{
+                 label: 'CO (PPB)',
+                 backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: co,
+                 fill: false
+             }]
+         },
+         // .slice(0,temp.length/10
     
-//         // Configuration options go here
-//         options: {
-//             responsive: false,
-//             events: ['click'],
-// 			title: {
-// 					display: true,
-// 					text: 'CO Chart'
-// 			},
-// 			tooltips: {
-// 					mode: 'nearest',
-// 					intersect: true,
-// 			},
-// 			hover: {
-// 					mode: 'nearest',
-// 					intersect: true
-// 			},
-//         }
-//     });
+         // Configuration options go here
+         options: {
+             responsive: false,
+             events: ['click'],
+ 			title: {
+ 					display: true,
+ 					text: 'CO Chart'
+ 			},
+ 			tooltips: {
+ 					mode: 'nearest',
+ 					intersect: true,
+ 			},
+ 			hover: {
+ 					mode: 'nearest',
+ 					intersect: true
+ 			},
+         }
+     });
 
-//     new Chart(document.getElementById('aq').getContext('2d'), {
-//         // The type of chart we want to create
-//         type: 'line',
-//         // The data for our dataset
-//         data: {
-//             labels: timestamp_arr,
-//             datasets: [{
-//                 label: 'Air_Quality [Smoke] (PPM)',
-//                 backgroundColor: 'rgb(255, 99, 132)',
-//                 borderColor: 'rgb(255, 99, 132)',
-//                 data: aq,
-//                 fill: false
-//             }]
-//         },
-//         // .slice(0,temp.length/10
+     new Chart(document.getElementById('aq').getContext('2d'), {
+         // The type of chart we want to create
+         type: 'line',
+         // The data for our dataset
+         data: {
+             labels: timestamp_arr,
+             datasets: [{
+                 label: 'Air_Quality [Smoke] (PPM)',
+                 backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: aq,
+                 fill: false
+             }]
+         },
+         // .slice(0,temp.length/10
+  
+         // Configuration options go here
+         options: {
+             responsive: false,
+             events: ['click'],
+ 			title: {
+ 					display: true,
+ 					text: 'Air_Quality [Smoke] Chart'
+ 			},
+ 			tooltips: {
+ 					mode: 'nearest',
+ 					intersect: true,
+			},
+ 			hover: {
+ 					mode: 'nearest',
+ 					intersect: true
+ 			},
+         }
+     });
+
+     new Chart(document.getElementById('pm2').getContext('2d'), {
+         // The type of chart we want to create
+         type: 'line',
+         // The data for our dataset
+         data: {
+             labels: timestamp_arr,
+             datasets: [{
+                 label: 'PM2.5 (ug/m^3)',
+                 backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: pm2,
+                 fill: false
+             }]
+         },
+         // .slice(0,temp.length/10
     
-//         // Configuration options go here
-//         options: {
-//             responsive: false,
-//             events: ['click'],
-// 			title: {
-// 					display: true,
-// 					text: 'Air_Quality [Smoke] Chart'
-// 			},
-// 			tooltips: {
-// 					mode: 'nearest',
-// 					intersect: true,
-// 			},
-// 			hover: {
-// 					mode: 'nearest',
-// 					intersect: true
-// 			},
-//         }
-//     });
+         // Configuration options go here
+         options: {
+             responsive: false,
+             events: ['click'],
+ 			title: {
+ 					display: true,
+ 					text: 'PM2.5 Chart'
+ 			},
+ 			tooltips: {
+ 					mode: 'nearest',
+ 					intersect: true,
+ 			},
+ 			hover: {
+ 					mode: 'nearest',
+ 					intersect: true
+ 			},
+         }
+     });
 
-//     new Chart(document.getElementById('pm2').getContext('2d'), {
-//         // The type of chart we want to create
-//         type: 'line',
-//         // The data for our dataset
-//         data: {
-//             labels: timestamp_arr,
-//             datasets: [{
-//                 label: 'PM2.5 (ug/m^3)',
-//                 backgroundColor: 'rgb(255, 99, 132)',
-//                 borderColor: 'rgb(255, 99, 132)',
-//                 data: pm2,
-//                 fill: false
-//             }]
-//         },
-//         // .slice(0,temp.length/10
-    
-//         // Configuration options go here
-//         options: {
-//             responsive: false,
-//             events: ['click'],
-// 			title: {
-// 					display: true,
-// 					text: 'PM2.5 Chart'
-// 			},
-// 			tooltips: {
-// 					mode: 'nearest',
-// 					intersect: true,
-// 			},
-// 			hover: {
-// 					mode: 'nearest',
-// 					intersect: true
-// 			},
-//         }
-//     });
-
-//     new Chart(document.getElementById('pm10').getContext('2d'), {
-//         // The type of chart we want to create
-//         type: 'line',
-//         // The data for our dataset
-//         data: {
-//             labels: timestamp_arr,
-//             datasets: [{
-//                 label: 'PM10 (ug/m^3)',
-//                 backgroundColor: 'rgb(255, 99, 132)',
-//                 borderColor: 'rgb(255, 99, 132)',
-//                 data: pm10,
-//                 fill: false
-//             }]
-//         },
-//         // .slice(0,temp.length/10
-    
-//         // Configuration options go here
-//         options: {
-//             responsive: false,
-//             events: ['click'],
-// 			title: {
-// 					display: true,
-// 					text: 'PM10 Chart'
-// 			},
-// 			tooltips: {
-// 					mode: 'nearest',
-// 					intersect: true,
-// 			},
-// 			hover: {
-// 					mode: 'nearest',
-// 					intersect: true
-// 			},
-//         }
-//     });
-// }
-
+     new Chart(document.getElementById('pm10').getContext('2d'), {
+         // The type of chart we want to create
+         type: 'line',
+         // The data for our dataset
+         data: {
+             labels: timestamp_arr,
+             datasets: [{
+                 label: 'PM10 (ug/m^3)',
+                 backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: pm10,
+                 fill: false
+             }]
+         },
+         // .slice(0,temp.length/10
+ 
+         // Configuration options go here
+         options: {
+             responsive: false,
+             events: ['click'],
+ 			title: {
+ 					display: true,
+ 					text: 'PM10 Chart'
+ 			},
+ 			tooltips: {
+ 					mode: 'nearest',
+ 					intersect: true,
+ 			},
+ 			hover: {
+ 					mode: 'nearest',
+ 					intersect: true
+ 			},
+         }
+     });
+ }
