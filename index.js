@@ -26,25 +26,33 @@ function signOut(){
 }
 
 function getData(){
-    firebase.database().ref().on('value', snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
+    let [date, month, year]    = new Date().toLocaleDateString("en-in").split("/")
+    date = "0"+date
+    month = "0"+month
+
+    firebase.database().ref(year+"/"+month+"/"+date+"/").once('value').then( snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
         let data = snapshot.val();
         // console.log(data)
-        for(yr in data){
-            // console.log(data[yr]);
-            yrs_data = data[yr]
-            for(month in yrs_data){
-                // console.log(yrs_data[month]);
-                months_data = yrs_data[month]
-                for(day in months_data){
-                    // console.log(months_data[day])
-                    days_data = months_data[day]
-                    for(time in days_data){
-                        // console.log((days_data[time]));
-                        insert_data(yr+"/"+month+"/"+day+" "+time, days_data[time])
-                    }    
-                }
-            }
+        for(time in data){
+           console.log((data[time]));
+           insert_data(year+"/"+month+"/"+date+" "+time, data[time]) 
         }
+        // for(yr in data){
+        //     // console.log(data[yr]);
+        //     yrs_data = data[yr]
+        //     for(month in yrs_data){
+        //         // console.log(yrs_data[month]);
+        //         months_data = yrs_data[month]
+        //         for(day in months_data){
+        //             // console.log(months_data[day])
+        //             days_data = months_data[day]
+        //             for(time in days_data){
+        //                 // console.log((days_data[time]));
+        //                 insert_data(yr+"/"+month+"/"+day+" "+time, days_data[time])
+        //             }    
+        //         }
+        //     }
+        // }
     })
 }
 
@@ -284,3 +292,209 @@ IF user enters date ---->
          }
      });
  }
+
+
+ function draw_temp_graph(){
+    document.querySelectorAll("canvas").forEach(canvas=> {
+        canvas.style.display="none"
+    })
+     document.getElementById('temp').style.display="block"
+    new Chart(document.getElementById('temp').getContext('2d'), {
+        // The type of chart we want to create
+       type: 'line',
+       // The data for our dataset
+       data: {
+           labels: timestamp_arr,
+           datasets: [{
+               label: 'Temperature (°C)',
+               backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: temp,
+                fill: false
+           }]
+        },
+        // .slice(0,temp.length/10
+   
+       // Configuration options go here
+       options: {
+           responsive: false,
+           events: ['click'],
+           title: {
+                   display: true,
+                   text: 'Temperature Chart'
+           },
+           tooltips: {
+                   mode: 'nearest',
+                    intersect: true,
+            },
+           hover: {
+                    mode: 'nearest',
+                   intersect: true
+           },
+        }
+            });
+ }
+
+ function draw_co_graph(){
+     document.querySelectorAll("canvas").forEach(canvas=> {
+         canvas.style.display="none"
+     })
+    document.getElementById('co').style.display="block"
+    new Chart(document.getElementById('co').getContext('2d'), {
+        // The type of chart we want to create
+        type: 'line',
+        // The data for our dataset
+        data: {
+            labels: timestamp_arr,
+            datasets: [{
+                label: 'CO (PPB)',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: co,
+                fill: false
+            }]
+        },
+        // .slice(0,temp.length/10
+   
+        // Configuration options go here
+        options: {
+            responsive: false,
+            events: ['click'],
+            title: {
+                    display: true,
+                    text: 'CO Chart'
+            },
+            tooltips: {
+                    mode: 'nearest',
+                    intersect: true,
+            },
+            hover: {
+                    mode: 'nearest',
+                    intersect: true
+            },
+        }
+    });
+}
+
+function draw_aq_graph(){
+    document.querySelectorAll("canvas").forEach(canvas=> {
+        canvas.style.display="none"
+    })
+   document.getElementById('aq').style.display="block"
+   new Chart(document.getElementById('aq').getContext('2d'), {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: timestamp_arr,
+        datasets: [{
+            label: 'Air_Quality [Smoke] (PPM)',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: aq,
+            fill: false
+        }]
+    },
+    // .slice(0,temp.length/10
+
+    // Configuration options go here
+    options: {
+        responsive: false,
+        events: ['click'],
+        title: {
+                display: true,
+                text: 'Air_Quality [Smoke] Chart'
+        },
+        tooltips: {
+                mode: 'nearest',
+                intersect: true,
+       },
+        hover: {
+                mode: 'nearest',
+                intersect: true
+        },
+    }
+});
+}
+
+function draw_pm2_graph(){
+    document.querySelectorAll("canvas").forEach(canvas=> {
+        canvas.style.display="none"
+    })
+   document.getElementById('pm2').style.display="block"
+   new Chart(document.getElementById('pm2').getContext('2d'), {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: timestamp_arr,
+        datasets: [{
+            label: 'PM2.5 (ug/m^3)',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: pm2,
+            fill: false
+        }]
+    },
+    // .slice(0,temp.length/10
+
+    // Configuration options go here
+    options: {
+        responsive: false,
+        events: ['click'],
+        title: {
+                display: true,
+                text: 'PM2.5 Chart'
+        },
+        tooltips: {
+                mode: 'nearest',
+                intersect: true,
+        },
+        hover: {
+                mode: 'nearest',
+                intersect: true
+        },
+    }
+});
+}
+
+function draw_pm10_graph(){
+    document.querySelectorAll("canvas").forEach(canvas=> {
+        canvas.style.display="none"
+    })
+   document.getElementById('pm10').style.display="block"
+   new Chart(document.getElementById('pm10').getContext('2d'), {
+    // The type of chart we want to create
+    type: 'line',
+    // The data for our dataset
+    data: {
+        labels: timestamp_arr,
+        datasets: [{
+            label: 'PM10 (ug/m^3)',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: pm10,
+            fill: false
+        }]
+    },
+    // .slice(0,temp.length/10
+
+    // Configuration options go here
+    options: {
+        responsive: false,
+        events: ['click'],
+        title: {
+                display: true,
+                text: 'PM10 Chart'
+        },
+        tooltips: {
+                mode: 'nearest',
+                intersect: true,
+        },
+        hover: {
+                mode: 'nearest',
+                intersect: true
+        },
+    }
+});
+}
