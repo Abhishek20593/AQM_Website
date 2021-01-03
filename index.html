@@ -30,6 +30,7 @@
                 <th>PM10 (ug/m^3)</th>
             </tr>
         </table>
+
      </div>
      <div class="show-graph-btns">
         <button id="show-temp" onclick="draw_temp_graph()">Click to Show Temperature graph</button>
@@ -38,6 +39,7 @@
         <button id="show-pm2" onclick="draw_pm2_graph()">Click to Show PM2.5 graph</button>
         <button id="show-pm10" onclick="draw_pm10_graph()">Click to Show PM10 graph</button>
     </div>
+
     <div class="graphs">
        <canvas id="temp" height="500" width="1000"></canvas>
        <canvas id="co" height="500" width="1000"></canvas>
@@ -48,6 +50,7 @@
 
      <button onclick="signOut()">Log out</button>
 </body>
+
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
