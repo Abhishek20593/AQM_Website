@@ -6,7 +6,7 @@ function signin(event){
         .then((user) => {
             // console.log(user)
             console.log("Signed in")
-            location.href = "/AQM_Website"
+            location.href = "/AQM_Website/"
             // document.getElementsByClassName("text")[0].style.display = "block";
         })
         .catch((error) => {
