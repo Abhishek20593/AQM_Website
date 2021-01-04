@@ -25,10 +25,13 @@ function signOut(){
         })
 }
 
-function getData(){
-    let [date, month, year]    = new Date().toLocaleDateString("en-in").split("/")
-    date = "0"+date
-    month = "0"+month
+function getData(event){
+    event.preventDefault();
+    // let [date, month, year] = new Date().toLocaleDateString("en-in").split("/")
+    // date = "0"+date
+    // month = "0"+month
+
+    let [date, month, year] = document.getElementById("date").value.split("/")
 
     firebase.database().ref(year+"/"+month+"/"+date+"/").once('value').then( snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
         let data = snapshot.val();
@@ -123,7 +126,7 @@ IF user enters date ---->
         data: {
             labels: timestamp_arr,
             datasets: [{
-                label: 'Temperature (0C)',
+                label: 'Temperature (℃)',
                 backgroundColor: 'rgb(255, 99, 132)',
                  borderColor: 'rgb(255, 99, 132)',
                  data: temp,
@@ -134,8 +137,8 @@ IF user enters date ---->
     
         // Configuration options go here
         options: {
-            responsive: false,
-            events: ['click'],
+            //responsive: false,
+            //events: ['click'],
 			title: {
 					display: true,
 					text: 'Temperature Chart'
@@ -170,8 +173,8 @@ IF user enters date ---->
     
          // Configuration options go here
          options: {
-             responsive: false,
-             events: ['click'],
+             //responsive: false,
+             //events: ['click'],
  			title: {
  					display: true,
  					text: 'CO Chart'
@@ -205,8 +208,8 @@ IF user enters date ---->
   
          // Configuration options go here
          options: {
-             responsive: false,
-             events: ['click'],
+             //responsive: false,
+             //events: ['click'],
  			title: {
  					display: true,
  					text: 'Air_Quality [Smoke] Chart'
@@ -240,8 +243,8 @@ IF user enters date ---->
     
          // Configuration options go here
          options: {
-             responsive: false,
-             events: ['click'],
+             //responsive: false,
+             //events: ['click'],
  			title: {
  					display: true,
  					text: 'PM2.5 Chart'
@@ -275,8 +278,8 @@ IF user enters date ---->
  
          // Configuration options go here
          options: {
-             responsive: false,
-             events: ['click'],
+             //responsive: false,
+             //events: ['click'],
  			title: {
  					display: true,
  					text: 'PM10 Chart'
@@ -317,8 +320,8 @@ IF user enters date ---->
    
        // Configuration options go here
        options: {
-           responsive: false,
-           events: ['click'],
+        //    responsive: false,
+        //    events: ['click'],
            title: {
                    display: true,
                    text: 'Temperature Chart'
@@ -358,8 +361,8 @@ IF user enters date ---->
    
         // Configuration options go here
         options: {
-            responsive: false,
-            events: ['click'],
+            //responsive: false,
+            //events: ['click'],
             title: {
                     display: true,
                     text: 'CO Chart'
@@ -399,8 +402,8 @@ function draw_aq_graph(){
 
     // Configuration options go here
     options: {
-        responsive: false,
-        events: ['click'],
+        //responsive: false,
+        //events: ['click'],
         title: {
                 display: true,
                 text: 'Air_Quality [Smoke] Chart'
@@ -440,8 +443,8 @@ function draw_pm2_graph(){
 
     // Configuration options go here
     options: {
-        responsive: false,
-        events: ['click'],
+        //responsive: false,
+        //events: ['click'],
         title: {
                 display: true,
                 text: 'PM2.5 Chart'
@@ -481,8 +484,8 @@ function draw_pm10_graph(){
 
     // Configuration options go here
     options: {
-        responsive: false,
-        events: ['click'],
+        //responsive: false,
+        //events: ['click'],
         title: {
                 display: true,
                 text: 'PM10 Chart'

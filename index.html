@@ -15,10 +15,11 @@
      </div>
      <h1>Realtime Monitoring</h1>
 
-     <div class="time-date-selector">
-     <P>DATE: <input type="text" placeholder="DD/MM/YYYY" id="date"></P> 
-
-     </div>
+     <form class="time-date-selector">
+         <label for="date">Enter Date: </label> 
+         <input type="text" placeholder="DD/MM/YYYY" id="date"> 
+         <button onclick="getData(event)">Submit</button>
+     </form>
      <div class="data-container">
         <table id="data" style="width: 100%;">
             <tr>
@@ -41,11 +42,11 @@
     </div>
 
     <div class="graphs">
-       <canvas id="temp" height="500" width="1000"></canvas>
-       <canvas id="co" height="500" width="1000"></canvas>
-       <canvas id="aq" height="500" width="1000"></canvas>
-       <canvas id="pm2" height="500" width="1000"></canvas>
-       <canvas id="pm10" height="500" width="1000"></canvas>
+       <canvas id="temp"></canvas>
+       <canvas id="co"></canvas>
+       <canvas id="aq"></canvas>
+       <canvas id="pm2"></canvas>
+       <canvas id="pm10"></canvas>
     </div>
 
      <button onclick="signOut()">Log out</button>
@@ -71,9 +72,9 @@ var firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     
     firebase.auth().onAuthStateChanged((user) => {
-    // console.log(user)
+    console.log(user)
     if(user){
-        getData()
+        // getData()
         getLocation()
     }else{
         console.log("Not logged in index.html")

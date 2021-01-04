@@ -68,4 +68,6 @@ table, th, td {
 
 canvas {
     display: none;
+    width: 1300px !important;
+    height: 500px !important;
 }
