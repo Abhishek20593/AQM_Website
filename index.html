@@ -34,19 +34,21 @@
 
      </div>
      <div class="show-graph-btns">
-        <button id="show-temp" onclick="draw_temp_graph()">Click to Show Temperature graph</button>
-        <button id="show-co" onclick="draw_co_graph()">Click to Show CO graph</button>
+         
         <button id="show-aq" onclick="draw_aq_graph()">Click to Show air_quality_smoke graph</button>
+        <button id="show-co" onclick="draw_co_graph()">Click to Show CO graph</button>
         <button id="show-pm2" onclick="draw_pm2_graph()">Click to Show PM2.5 graph</button>
         <button id="show-pm10" onclick="draw_pm10_graph()">Click to Show PM10 graph</button>
+        <button id="show-temp" onclick="draw_temp_graph()">Click to Show Temperature graph</button>
+        
     </div>
 
     <div class="graphs">
-       <canvas id="temp"></canvas>
-       <canvas id="co"></canvas>
        <canvas id="aq"></canvas>
+       <canvas id="co"></canvas>      
        <canvas id="pm2"></canvas>
        <canvas id="pm10"></canvas>
+       <canvas id="temp"></canvas>
     </div>
 
      <button onclick="signOut()">Log out</button>
