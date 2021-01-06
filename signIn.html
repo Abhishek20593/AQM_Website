@@ -11,7 +11,7 @@
         <h1>air quality monitoring</h1>
     </div>
     <div style="text-align: center; font-size: 40px;">
-        <p>Please Sign-in to continue</p>
+        <p>(Please Sign-in to continue)</p>
     </div>
     <div class="container">
         <div class="login">
@@ -24,9 +24,10 @@
                     <label for="password">Enter Password:</label>
                     <input type="password" id="password" name="password">
                 </div>
-                <button onclick="signin(event)">SIGN IN</button>
+                <button onclick="signin(event)" style= "background-color: deepskyblue;">SIGN IN</button>
             </form>
         </div>
+        <div class="loader"></div>
     </div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>

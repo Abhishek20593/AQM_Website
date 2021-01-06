@@ -2,6 +2,7 @@
     font-size: 50px;
     text-align: center;
     text-transform: uppercase;
+    background-color: goldenrod;
 }
 
 .container {
@@ -9,18 +10,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .login {
     font-size: 50px;
-    border: 2px solid red;
+    border: 6px solid red;
     padding: 60px;
+    background-color: lightcoral;
 }
 
 .login form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.logout{
+    margin: 30px 45%;
+    background-color: tomato;
 }
 
 .input {
@@ -62,6 +70,10 @@ table, th, td {
     height: 300px;
 } */
 
+button{
+    font-size: 25px;
+}
+
 .intro-text {
     font-size: 25px;
 }
@@ -72,14 +84,17 @@ canvas {
     height: 500px !important;
 }
 .loader {
-    border: 16px solid whitesmoke;
+    position: absolute;
+    margin: 100px 45%;
+    border: 8px solid whitesmoke;
     border-radius: 50%;
-    border-top: 16px solid whitesmoke;
-    border-bottom: 16px solid springgreen;
-    width: 80px;
-    height: 80px;
+    border-top: 8px solid whitesmoke;
+    border-bottom: 8px solid springgreen;
+    width: 30px;
+    height: 30px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+    display: none;
   }
   
   @-webkit-keyframes spin {
@@ -91,3 +106,7 @@ canvas {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+/* #data{
+    display: none;
+} */
