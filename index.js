@@ -1,11 +1,13 @@
 function signin(event){
     event.preventDefault()
+    document.querySelector(".loader-signin").style.display = "block";
     let email = document.getElementById("email").value 
     let password = document.getElementById("password").value
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((user) => {
             // console.log(user)
             console.log("Signed in")
+            document.querySelector(".loader-signin").style.display = "none";
             location.href = "/AQM_Website"
             // document.getElementsByClassName("text")[0].style.display = "block";
         })
