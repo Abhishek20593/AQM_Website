@@ -50,12 +50,12 @@ function getData(event){
 
     document.getElementById('data').innerHTML= `
         <tr>
-            <th>Timestamp</th>
-            <th>Temperature (&deg;C)</th>
-            <th>CO (PPB)</th>
-            <th>Air_Quality[Smoke] (PPM)</th>
-            <th>PM2.5 (ug/m^3)</th>
-            <th>PM10 (ug/m^3)</th>
+            <th class="td">Timestamp</th>
+            <th class="temp">Temperature (&deg;C)</th>
+            <th class="co">CO (PPB)</th>
+            <th class="aq">Air_Quality[Smoke] (PPM)</th>
+            <th class="pm25">PM2.5 (ug/m^3)</th>
+            <th class="pm10">PM10 (ug/m^3)</th>
         </tr>
     `;
     timestamp_arr = Array()
@@ -111,12 +111,12 @@ function insert_data(timestamp, data){
     var row = document.getElementById('data')
     row.innerHTML+= `
         <tr>
-            <td>${timestamp}</td>
-            <td>${data[0]}</td>
-            <td>${data[1]}</td>
-            <td>${data[2]}</td>
-            <td>${data[3]}</td>
-            <td>${data[4]}</td> 
+            <td class="td">${timestamp}</td>
+            <td class="temp">${data[0]}</td>
+            <td class="co">${data[1]}</td>
+            <td class="aq">${data[2]}</td>
+            <td class="pm25">${data[3]}</td>
+            <td class="pm10">${data[4]}</td> 
         </tr>`; 
         
         // draw_graph();
@@ -436,6 +436,9 @@ IF user enters date ---->
                         labelString: 'CO (PPB)'
                     }
                 }]
+            },
+            chartArea: {
+                backgroundColor: 'rgba(251, 85, 85, 0.4)'
             }
         }
     });

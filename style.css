@@ -1,3 +1,6 @@
+body{
+    background-color:rgb(232, 248, 245);
+}
 .title {
     font-size: 50px;
     text-align: center;
@@ -65,10 +68,24 @@ table, th, td {
     text-align: center;
 }
 
-/* .graph {
-    width: 300px;
-    height: 300px;
-} */
+.td{
+background-color: rgb(191, 248, 193);
+}
+.temp{
+    background-color: rgb(244, 164, 96);
+}
+.co{
+    background-color: rgb(205, 133, 63);
+}
+.aq{
+    background-color: rgb(238, 130, 228);
+}
+.pm25{
+background-color: rgb(60, 179,113);
+}
+.pm10{
+background-color: rgb(72, 209, 204);
+}
 
 button{
     font-size: 25px;
