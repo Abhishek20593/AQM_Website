@@ -340,8 +340,8 @@ IF user enters date ---->
            labels: timestamp_arr,
            datasets: [{
                label: 'Temperature (°C)',
-               backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+               backgroundColor: 'rgb(244, 164, 96)',
+                borderColor: 'rgb(244, 164, 96)',
                 data: temp,
                 fill: false
            }]
@@ -364,7 +364,23 @@ IF user enters date ---->
                     mode: 'nearest',
                    intersect: true
            },
+           scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Date and Time'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Temperature (°C)'
+                }
+            }]
         }
+    }
             });
  }
 
@@ -381,8 +397,8 @@ IF user enters date ---->
             labels: timestamp_arr,
             datasets: [{
                 label: 'CO (PPB)',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgb(205, 133, 63)',
+                borderColor: 'rgb(205, 133, 63)',
                 data: co,
                 fill: false
             }]
@@ -405,6 +421,22 @@ IF user enters date ---->
                     mode: 'nearest',
                     intersect: true
             },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Date and Time'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'CO (PPB)'
+                    }
+                }]
+            }
         }
     });
 }
@@ -422,8 +454,8 @@ function draw_aq_graph(){
         labels: timestamp_arr,
         datasets: [{
             label: 'Air_Quality [Smoke] (PPM)',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(238, 130, 228)',
+            borderColor: 'rgb(238, 130, 228)',
             data: aq,
             fill: false
         }]
@@ -446,6 +478,22 @@ function draw_aq_graph(){
                 mode: 'nearest',
                 intersect: true
         },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Date and Time'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Air_Quality [Smoke] (PPM)'
+                }
+            }]
+        }
     }
 });
 }
@@ -463,8 +511,8 @@ function draw_pm2_graph(){
         labels: timestamp_arr,
         datasets: [{
             label: 'PM2.5 (ug/m^3)',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(60, 179, 113)',
+            borderColor: 'rgb(60, 179, 113)',
             data: pm2,
             fill: false
         }]
@@ -487,6 +535,22 @@ function draw_pm2_graph(){
                 mode: 'nearest',
                 intersect: true
         },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Date and Time'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'PM2.5 (ug/m^3)'
+                }
+            }]
+        }
     }
 });
 }
@@ -504,8 +568,8 @@ function draw_pm10_graph(){
         labels: timestamp_arr,
         datasets: [{
             label: 'PM10 (ug/m^3)',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgb(72, 209, 204)',
+            borderColor: 'rgb(72, 209,204)',
             data: pm10,
             fill: false
         }]
@@ -528,6 +592,22 @@ function draw_pm10_graph(){
                 mode: 'nearest',
                 intersect: true
         },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Date and Time'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'PM10 (ug/m^3)'
+                }
+            }]
+        }
     }
 });
 }
