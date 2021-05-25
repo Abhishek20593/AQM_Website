@@ -67,7 +67,8 @@ function getData(event){
 
 
 
-    let [date, month, year] = document.getElementById("date").value.split("/")
+    let [year, month, date] = document.getElementById("date").value.split("-")
+    console.log(document.getElementById("date").value)
 
     firebase.database().ref(year+"/"+month+"/"+date+"/").once('value').then( snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
         document.querySelector(".loader").style.display = "none";
@@ -396,7 +397,7 @@ IF user enters date ---->
         data: {
             labels: timestamp_arr,
             datasets: [{
-                label: 'CO (PPB)',
+                label: 'CO (PPM)',
                 backgroundColor: 'rgb(205, 133, 63)',
                 borderColor: 'rgb(205, 133, 63)',
                 data: co,
@@ -433,7 +434,7 @@ IF user enters date ---->
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'CO (PPB)'
+                        labelString: 'CO (PPM)'
                     }
                 }]
             },
