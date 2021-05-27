@@ -25,17 +25,17 @@
             <tr>
                 <th class="td">Timestamp</th>
                 <th class="temp">Temperature (&deg;C)</th>
-                <th class="co">CO (PPM)</th>
-                <th class="aq">Air_Quality[Smoke] (PPM)</th>
-                <th class="pm25">PM2.5 (ug/m^3)</th>
-                <th class="pm10">PM10 (ug/m^3)</th>
+                <th class="co">CO (µg/m³)</th>
+                <th class="aq">Air_Quality_in_terms_of_Smoke_VoCs_Overall_Concentration (µg/m³) </th>
+                <th class="pm25">PM2.5 (µg/m³)</th>
+                <th class="pm10">PM10 (µg/m³)</th>
             </tr>
         </table>
 
      </div>
      <div class="show-graph-btns">
 
-        <button id="show-aq" onclick="draw_aq_graph()" style="font-size: 20px; background-color: violet;">Click to Show Air Quality (Smoke) Graph</button>
+        <button id="show-aq" onclick="draw_aq_graph()" style="font-size: 20px; background-color: violet;">Click to Show Air Quality (Smoke_VoCs_Overall_Concentration) Graph</button>
         <button id="show-pm2" onclick="draw_pm2_graph()" style="font-size: 20px; background-color: mediumseagreen;">Click to Show PM2.5 Graph</button>
         <button id="show-pm10" onclick="draw_pm10_graph()" style="font-size: 20px; background-color: mediumturquoise">Click to Show PM10 Graph</button>
         <button id="show-co" onclick="draw_co_graph()" style="font-size: 20px; background-color:peru;">Click to Show CO graph</button>

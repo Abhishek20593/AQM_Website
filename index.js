@@ -52,10 +52,10 @@ function getData(event){
         <tr>
             <th class="td">Timestamp</th>
             <th class="temp">Temperature (&deg;C)</th>
-            <th class="co">CO (PPB)</th>
-            <th class="aq">Air_Quality[Smoke] (PPM)</th>
-            <th class="pm25">PM2.5 (ug/m^3)</th>
-            <th class="pm10">PM10 (ug/m^3)</th>
+            <th class="co">CO (µg/m³)</th>
+            <th class="aq">Air_Quality_in_terms_of_Smoke_VoCs_Overall_Concentration (µg/m³)</th>
+            <th class="pm25">PM2.5 (µg/m³)</th>
+            <th class="pm10">PM10 (µg/m³)</th>
         </tr>
     `;
     timestamp_arr = Array()
@@ -397,7 +397,7 @@ IF user enters date ---->
         data: {
             labels: timestamp_arr,
             datasets: [{
-                label: 'CO (PPM)',
+                label: 'CO(µg/m³)',
                 backgroundColor: 'rgb(205, 133, 63)',
                 borderColor: 'rgb(205, 133, 63)',
                 data: co,
@@ -434,7 +434,7 @@ IF user enters date ---->
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'CO (PPM)'
+                        labelString: 'CO(µg/m³)'
                     }
                 }]
             },
@@ -457,7 +457,7 @@ function draw_aq_graph(){
     data: {
         labels: timestamp_arr,
         datasets: [{
-            label: 'Air_Quality [Smoke] (PPM)',
+            label: 'Air_Quality_in_terms_of_Smoke_VoCs_Overall_Concentration (µg/m³)',
             backgroundColor: 'rgb(238, 130, 228)',
             borderColor: 'rgb(238, 130, 228)',
             data: aq,
@@ -472,7 +472,7 @@ function draw_aq_graph(){
         //events: ['click'],
         title: {
                 display: true,
-                text: 'Air_Quality [Smoke] Chart'
+                text: 'Air_Quality_in_terms_of_Smoke_VoCs_Overall_Concentration Chart'
         },
         tooltips: {
                 mode: 'nearest',
@@ -494,7 +494,7 @@ function draw_aq_graph(){
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'Air_Quality [Smoke] (PPM)'
+                    labelString: 'Air_Quality_in_terms_of_Smoke_VoCs_Overall_Concentration (µg/m³)'
                 }
             }]
         }
@@ -514,7 +514,7 @@ function draw_pm2_graph(){
     data: {
         labels: timestamp_arr,
         datasets: [{
-            label: 'PM2.5 (ug/m^3)',
+            label: 'PM2.5 (µg/m³)',
             backgroundColor: 'rgb(60, 179, 113)',
             borderColor: 'rgb(60, 179, 113)',
             data: pm2,
@@ -551,7 +551,7 @@ function draw_pm2_graph(){
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'PM2.5 (ug/m^3)'
+                    labelString: 'PM2.5 (µg/m³)'
                 }
             }]
         }
@@ -571,7 +571,7 @@ function draw_pm10_graph(){
     data: {
         labels: timestamp_arr,
         datasets: [{
-            label: 'PM10 (ug/m^3)',
+            label: 'PM10 (µg/m³)',
             backgroundColor: 'rgb(72, 209, 204)',
             borderColor: 'rgb(72, 209,204)',
             data: pm10,
@@ -608,7 +608,7 @@ function draw_pm10_graph(){
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'PM10 (ug/m^3)'
+                    labelString: 'PM10 (µg/m³)'
                 }
             }]
         }
