@@ -53,7 +53,7 @@ function getData(event){
             <th class="td">Timestamp</th>
             <th class="temp">Temperature (&deg;C)</th>
             <th class="co">CO (µg/m³)</th>
-            <th class="aq">Air_Quality_in_terms_of_Smoke_NOx_VoCs_Overall_Concentration (µg/m³)</th>
+            <th class="aq">Air_Quality_in_terms_of_Smoke_NOx_VOCs_Overall_Concentration (µg/m³)</th>
             <th class="pm25">PM2.5 (µg/m³)</th>
             <th class="pm10">PM10 (µg/m³)</th>
         </tr>
@@ -457,7 +457,7 @@ function draw_aq_graph(){
     data: {
         labels: timestamp_arr,
         datasets: [{
-            label: 'Air_Quality_in_terms_of_Smoke_NOx_VoCs_Overall_Concentration (µg/m³)',
+            label: 'Air_Quality_in_terms_of_Smoke_NOx_VOCs_Overall_Concentration (µg/m³)',
             backgroundColor: 'rgb(238, 130, 228)',
             borderColor: 'rgb(238, 130, 228)',
             data: aq,
@@ -472,7 +472,7 @@ function draw_aq_graph(){
         //events: ['click'],
         title: {
                 display: true,
-                text: 'Air_Quality_in_terms_of_Smoke_NOx_VoCs_Overall_Concentration Chart'
+                text: 'Air_Quality_in_terms_of_Smoke_NOx_VOCs_Overall_Concentration Chart'
         },
         tooltips: {
                 mode: 'nearest',
@@ -494,7 +494,7 @@ function draw_aq_graph(){
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'Air_Quality_in_terms_of_Smoke_NOx_VoCs_Overall_Concentration (µg/m³)'
+                    labelString: 'Air_Quality_in_terms_of_Smoke_NOx_VOCs_Overall_Concentration (µg/m³)'
                 }
             }]
         }
